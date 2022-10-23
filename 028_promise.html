@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise</title>
+</head>
+<body>
+
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+    <script>
+      // Promise
+
+      // 
+      var x = 1;
+
+      // 서버 호출하여 데이터를 받아오는 함수
+      // y = callServerData();
+
+      // var z = x + y;
+
+      // 서버로부터 데이터를 받기 전에 "var z="이 먼저 실행되면서 y값을 모르니 에러가 나는 경우가 있음
+      // 이러한 경우를 막기 위해 promise 사용 -> 서버로부터 데이터를 받아올 때까지 기다려줄게(밑에 거를 실행 안할게)
+
+      // Promise  -> 서버가 필요함
+      // axios -> 오픈소스 라이브러리
+
+      var url = "https://33255137-571a-49bf-9bfb-40ad75c4c623.mock.pstmn.io/productList"
+      var data = axios.get(url).then(function(response){
+        return response.data;
+      });
+
+      var total = 0;
+      for(var item of data) {
+        total += item.price;
+      }
+      console.log(total);   // 에러, 받아온 데이터 순으로 실행됨 
+      
+      
+      // promise 사용법
+      function getData() {
+        return new Promise(function(resolve, reject){
+          axios.get(url).then(function(response){
+          resolve(response.data);
+          });
+        });
+      }
+
+      var total = 0;
+
+      getData().then(function(data){
+        for(var item of data) {
+        total += item.price;
+      }
+      console.log(total); 
+      });
+
+    </script>
+</body>
+</html>

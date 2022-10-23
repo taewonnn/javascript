@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM-Dynamic Elements</title>
+</head>
+<body>
+    <section id="title">운동</section>
+    <form name="myForm">
+      <input type="text" name="myText" id="" placeholder="운동을 입력해주세요">
+      <button id="before" type="button">앞에 추가</button>
+      <button id="button" type="button">추가</button>
+    </form>
+    <ul class="list">
+      <li class="item" id="target">스쿼트</li>
+  </ul>
+    <script>
+      // HTML 새로운 요소 만들기
+      // createElement()
+      // appendChild()
+      // insertBefore
+      // remove
+      // parentNode
+
+      // appendChild()
+      let li = document.createElement('li');
+      let ul = document.querySelector('ul');
+
+      ul.appendChild(li);  // 새로운 li 추가
+      // li.textContent = "데드리프트"
+
+
+      
+      // addEventListener('', 함수)
+      let addBtn = document.getElementById('button');
+      
+      addBtn.addEventListener('click', function() {
+        alert('추가되었습니다.');
+        let li = document.createElement('li');
+        let ul = document.querySelector('ul');
+        li.textContent = inputBox.value;
+        ul.appendChild(li);
+      });
+      
+      // input 박스 가져오기
+      let inputBox = document.querySelector('input');
+      
+
+      // insertbefore(추가할 태그, 어디 앞에 넣을지) -> 특정 요소 앞에 넣기
+
+      let addBeforeBtn = document.getElementById('before')
+
+      addBeforeBtn.addEventListener('click', function(){
+        let li = document.createElement('li');
+        let ul = document.querySelector('ul');
+        let targetLi = document.querySelector('li#target');
+        console.log(targetLi);
+        li.textContent = inputBox.value;
+        ul.insertBefore(li, targetLi)
+      });
+
+
+    </script>
+</body>
+</html>

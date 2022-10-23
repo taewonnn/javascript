@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM - selector</title>
+    <style>
+      .dark {
+        color: white;
+        background-color: black;
+      }
+
+      .light {
+        color: black;
+        background-color: white;
+      }
+    </style>
+</head>
+<body>
+    <section id="title">운동</section>
+    <form name="myForm">
+      <input type="text" name="myText" id="" placeholder="운동을 입력해주세요">
+      <button>추가</button>
+    </form>
+    <ul class="list">
+      <li class="item">스쿼트</li>
+      <li class="item">벤치프레스</li>
+      <li class="item">데드리프트</li>
+      <P class="hello">안녕하세요</P>
+    </ul>
+
+    <script>
+      // https://paullabworkspace.notion.site/9-DOM-Document-Object-Model-fccce688a192439d99081fbf693bb096
+      // DOM
+      // Document Object Model  -> 웹문서를 객체화
+      // Document -> 내가 작성한 HTML
+      // tree를 만들고  각각의 요소와 속성, 콘텐츠를 표현하는 단위를 node라고 함
+
+      
+      // HTML 요소 선택하기
+      // 1. get 
+      // 2. query
+
+      // 1] get
+
+      // ID 이용
+      let title = document.getElementById('title')
+      console.log(title);  //     <section id="title">운동</section>
+
+      // 해당 내용을 바꾸고 싶다
+      title.textContent = "헬스 3대 운동"  // 운동 -> 헬스 3대 운동으로 변경됨
+
+      // Class 이용
+      let items = document.getElementsByClassName('item');
+      console.log(items);  // [li.item, li.item, li.item]
+
+      // n 번째 요소를 가져오고 싶다
+      console.log(items[0]);  // 스쿼트
+      console.log(items[1]);  // 벤치프레스
+
+      // Tag 이용
+      let lists = document.getElementsByTagName('li');
+      console.log(lists);  // [li.item, li.item, li.item]
+
+
+      
+      // 2] HTML 요소 Query  -> document.querySelector('css 선택자와 동일 방식으로 호출')
+      let h2 = document.querySelector('#title');
+      console.log(h2);   // <section id="title">운동</section>
+
+      let item = document.querySelector('.item');
+      console.log(item);   // 스쿼트 -> 1개만 가져옴    * 요소가 많아도 무조건 첫 번째 1개만 조회함
+
+      // 모든 요소 출력하기  -> querySelectorALl()
+      let itemAll = document.querySelectorAll('.item');
+      console.log(itemAll);   // [li.item, li.item, li.item]
+      
+      // n번째 요소를 가져오고 싶다
+      console.log(itemAll[2]);  // 데드리프트
+
+
+
+      // HTML 요소 조작하기
+      
+      // 컨텐츠 수정하기
+      // textContent -> HTML 태그를 모두 제거하고 순수 텍스트만 제공
+      // innerHTML -> HTML 태그를 그대로 제공
+
+      // textContent  -> 
+      // h2.textContent = '운동!!!';   // 헬스 3대 운동(기존) -> 운동!!!으로 변경됨
+      // h2.textContent = '<strong>운동!!!</strong>';  
+      // 헬스 3대 운동(기존) -> <strong>운동!!!</strong>으로 변경됨  strong태그가 그대로 입력이됨
+
+      // innerHTML
+      // h2.innerHTML = '<strong>운동@@@</strong>';  // strong 태그가 적용됨
+
+
+      // 속성 제어하기
+      // setAttribute -> 요소에서 주어진 이름의 속성값을 입력
+      // removeAttribute -> 요소에서 주어진 이름의 속성을 제거
+
+      // setAttribute(속성명, 속성값)
+      let input = document.querySelector('input')
+      input.setAttribute('placeholder', '헬스 운동을 입력해주세요')  // 운동을 입력해주세요 -> 헬스 운동을 입력해주세요
+
+      // removeAttribute
+      input.removeAttribute('placeholder');  // placeholder가 삭제됨
+
+
+      
+      // HTML 요소 스타일링
+
+      // 1. HTML 요소 직접 수정
+      // 2. class 이용
+
+      // HTML 요소 직접 수정  -> 실무에서 사용 X
+      let helloItem = document.querySelector('.hello')
+      // console.log(helloItem)  // <P class="hello">안녕하세요</P>
+      // helloItem.style.color = 'blue';  // 폰트 색상이 blue
+      
+
+      // class 이용
+      // style css에 dark와 light 클래스에 스타일 적용을 해두었음
+
+      // classList.add()
+      // 이 클래스를 아래와 같이 추가하면 동적으로 HTML에 적용이됨
+      helloItem.classList.add('dark');  // .hemllo에 dark 클래스가 추가됨
+
+      // classList.remove()
+      helloItem.classList.remove('dark');  // .hemllo에 dark 클래스가 삭제됨
+
+    </script>
+</body>
+</html>
