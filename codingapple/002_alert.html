@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="002_alert.css">
+    <title>alert 박스 만들기</title>
+</head>
+<body>
+    <!-- 
+    UI 만들기
+    1. html / css 미리 디자인
+    2. 필요할 때 보요달라고 코드 짬(자바스크립트로) 
+    -->
+    <div class="alert-box" id="alert">알림창입니다.
+      <button onclick = "btnal('none');">
+        닫기
+      </button>
+    </div>
+    <button onclick = "btnal('block');">
+      버튼
+    </button>
+    
+    <script>
+      function btnal(val) {
+        document.getElementById('alert').style.display = val;
+      }
+
+      // 파라미터 예시
+      
+      // Ex) 매우 복잡한 수식
+      function plus() {
+        2 + 1
+      }
+
+      plus(); // 3
+
+      // 2 + 2도 하고 싶어!
+      function plus2() {
+        2 + 2
+      }
+      plus2();  // 4
+
+
+      // 비슷한 구조가 있기에 함수 하나로 해서 만들 수 있다 -> 파라미터 이용
+    
+      function plus3(구멍) {
+        2 + 구멍
+      }
+      
+      plus3(40); // 42
+
+    </script>
+</body>
+</html>

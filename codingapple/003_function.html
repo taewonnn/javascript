@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="003_function.css">
+    <title>function</title>
+</head>
+<body>
+    <div class="alert-box", id="alert">
+      <p id="title">알림창</p>
+      <button onclick = "알림창열기('none')">닫기</button>
+    </div>
+    <button onclick = "아이디알림창();">버튼1</button>
+    <button onclick = "btnIdPw(val);">버튼2</button>
+
+    <script>
+      function 알림창열기(구멍) {
+        document.getElementById('alert').style.display = 구멍;
+      }
+
+      // 버튼1
+      // 1. p태그 내용을 아이디 입력으로 바꿈
+      // document.getElementById('title').innerHTML = '아이디를 입력해주세요';
+      // 2. 알림 띄움
+      // document.getElementById('alert').style.display = 'block';
+
+      // 함수로 바꾸기
+      function 아이디알림창() {
+        document.getElementById('title').innerHTML = '아이디를 입력해주세요';
+        document.getElementById('alert').style.display = 'block';
+      }
+
+      function 비밀번호알림창() {
+        document.getElementById('title').innerHTML = '비밀번호를 입력해주세요';
+        document.getElementById('alert').style.display = 'block';
+      }
+
+      // 두 개의 함수를 하나의 함수로 축약해보기
+      function btnIdPw(val) {
+        document.getElementById('title').innerHTML = 'val을 입력해주세요';
+        document.getElementById('alert').style.display = 'block';
+      }
+
+    </script>
+</body>
+</html>
