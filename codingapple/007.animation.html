@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="./007_animation.css">
+    <title>animation</title>
+</head>
+<body>
+    <button class="btnMod">모달창 로그인</button>
+
+    <!-- 모달창 -->
+    <!-- black-bg -> 시작스타일 , showMod -> 최종스타일 -->
+    <div class="black-bg showMod">
+      <div class="white-bg">
+        <h4>로그인하세요</h4>
+        <button class="btn btn-danger" id="close">닫기</button>
+      </div>
+    </div> 
+    <!-- /모달창 -->
+
+    
+    <script>
+
+      // 애니메이션
+
+      // one way : A상태 -> B상태로 이동
+      // 1. 아래 각각 스타일을 css 클래스로 만들어 놓기
+      //   - 시작 스타일 
+      //   - 최종 스타일
+      // 2. 원할 때 최종스타일로 변경하라고 코드 작성
+      // 3. 시작스타일에 transition 추가
+
+      document.querySelector('.btnMod').addEventListener('click', function() {
+        document.querySelector('.black-bg').classList.add('showMod');
+      })
+
+      
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+/* 숨기기 */
+.list-group {
+  display: none;
+}
+
+
+/* 보여주기 */
+.show {
+  display: block;
+}

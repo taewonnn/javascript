@@ -10,17 +10,32 @@
 <body>
     <div class="alert-box", id="alert">
       <p id="title">알림창</p>
-      <button onclick = "알림창열기('none')">닫기</button>
+      <button id="close">닫기</button>
     </div>
-    <button onclick = "아이디알림창();">버튼1</button>
-    <button onclick = "btnIdPw(val);">버튼2</button>
+    <button onclick = "btnIdPw('id');">버튼1</button>
+    <button onclick = "btnIdPw('pw');">버튼2</button>
 
     <script>
       function 알림창열기(구멍) {
         document.getElementById('alert').style.display = 구멍;
       }
 
-      // 버튼1
+      // addEventListener('click', function(){})
+      // onclick이 너무 지저분해!
+
+      document.getElementById('close').addEventListener('click', function() {
+        document.getElementById('alert').style.display = 'none';
+      });
+
+      // event
+      // ex. 클릭, 키 입력, 스크롤, 드래그
+      
+
+
+
+
+      // 작성하고자 하는 코드를 한글로 작성한 이후에 코드로 변환하자!
+      // 버튼
       // 1. p태그 내용을 아이디 입력으로 바꿈
       // document.getElementById('title').innerHTML = '아이디를 입력해주세요';
       // 2. 알림 띄움
@@ -33,15 +48,30 @@
       }
 
       function 비밀번호알림창() {
+        // 1, p태그 내용을 바꿔야함! 
         document.getElementById('title').innerHTML = '비밀번호를 입력해주세요';
+        // 2. 노출시키기!
         document.getElementById('alert').style.display = 'block';
       }
 
       // 두 개의 함수를 하나의 함수로 축약해보기
-      function btnIdPw(val) {
-        document.getElementById('title').innerHTML = 'val을 입력해주세요';
+      function btnIdPw(a) {
+        document.getElementById('title').innerHTML = a + '를 입력해주세요';
         document.getElementById('alert').style.display = 'block';
       }
+
+      
+      // .querySelector('클래스명')
+      // 똑같은 클래스가 여러 개 일 경우 중복해서 적용해도 상관없다!
+      // .querySelector('title')[0]  // 찾은 것 중에 몇 번째 title 클래스
+      
+
+
+
+
+      
+      
+
 
     </script>
 </body>

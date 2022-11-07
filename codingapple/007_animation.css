@@ -1,0 +1,27 @@
+/* 시작스타일 */
+.black-bg {
+  width : 100%;
+  height : 100%;
+  position : fixed;
+  background : rgba(0,0,0,0.5);
+  z-index : 5;
+  padding: 30px;
+  
+  /* 애니메이션 줄 때는 visibility 사용해야 애니메이션이 잘 적용됨 */
+  visibility: hidden;   
+  opacity: 0;
+  /* 모든 css 속성이 변경될 때 1초마다 변경되게해줘 */
+  transition: all 1s;   
+}
+
+/* 최종스타일 */
+.showMod {
+  visibility: visible;
+  opacity: 1;
+}
+
+.white-bg {
+  background: red;
+  border-radius: 5px;
+  padding: 30px;
+} 

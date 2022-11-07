@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>jquery</title>
+</head>
+<body>
+    <ul>
+      <li class="list-group-item">An item</li>
+      <li class="list-group-item">A second item</li>
+      <li class="list-group-item">A third item</li>
+      <li class="list-group-item">A fourth item</li>
+      <li class="list-group-item">And a fitth one</li>
+    </ul>
+
+    <p class="hello">안녕하세요</p>
+    <p class="hello">안녕하세요</p>
+    <p class="hello">안녕하세요</p>
+
+    <button id="test-btn">버튼!</button>
+
+    <script>
+      // jquery
+      // 라이브러리일 뿐! 코드가 훨씬 짧아짐!
+
+      // P태그에 내용 변경하기!
+      
+      // 자바스크립트로 변경
+      // document.querySelector('.hello').innerHTML = "bye";
+
+      // Jquery로 변경
+      $('.hello').html('bye');
+
+      // style 변경
+      $('.hello').css('color', 'red');
+
+      // 클래스 부착
+      // $('.hello').addClass();
+
+      // 클래스 탈착
+      // $('.hello').removeClass();
+
+      // 클래스 토글
+      // $('.hello').toggleClass();
+
+      // hello 클래스 3개 내용 한꺼번에 변경하려면?
+      $('.hello').html('bye bye')  // querySelectorAll과 유사하게 모두 찾아서 알아서 바꿔줌
+
+      // addEventListenr
+      $('#test-btn').on('click', function() {
+        $('.hello').toggle();
+      })
+
+    </script>
+</body>
+</html>
