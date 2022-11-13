@@ -3,11 +3,15 @@
 
 // 만약 입력으로 김다정이라는 이름이 주어지면 "안녕하세요. 저는 김다정입니다."라고 출력하게 해주세요.
 
+// function intro(name) {
+//   console.log(`안녕하세요. 저는 ${name}입니다.`)
+// }
+
 function intro(name) {
-  console.log(`안녕하세요. 저는 ${name}입니다.`)
+  return `안녕하세요. 저는 ${name}입니다.`
 }
 
-intro('김다정');
+console.log(intro('김다정'));
 
 
 // 16번
@@ -52,9 +56,16 @@ hei(149);
 
 function evl(a, b, c) {
   return Math.floor((a + b + c) / 3);
+  // return parseInt((a + b + c) /3);
 }
 
 console.log(evl(29, 20, 50));
+
+
+
+
+
+
 
 
 

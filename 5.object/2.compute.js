@@ -16,11 +16,13 @@ function getValue(obj, key) {
 console.log(getValue(obj, 'name'));  //taewon
 
 
-function addKey(obj, key, value) {
+function addKey(key, value) {
+  let obj = {}
   obj[key] = value;
+  return obj
 }
-addKey(obj, 'job', 'engineer');
-console.log(obj);
+console.log(addKey('job', 'engineer'));
+
 
 
 function deleteKey(obj, key) {
