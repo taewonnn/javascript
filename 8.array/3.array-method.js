@@ -38,49 +38,53 @@ const deleted = fruits.splice(1, 1);
 console.log(fruits); // 배열 자체를 수정(업데이트)
 console.log(deleted);
 fruits.splice(1, 1, '🍎', '🍓');
-console.log(fruits); // 배열 자체를 수정(업데이트) [ '🍌', '🍎', '🍋' ]
+console.log(fruits); // 배열 자체를 수정(업데이트)
 
 
-// 잘라진 새로운 배열을 만듬
+// 잘라진 새로운 배열을 만듬(기존 배열은 유지) - slice
 let newArr = fruits.slice(0, 2);
-console.log(newArr);
-console.log(fruits);
+console.log(newArr); // [ '🍌', '🍎' ]
+console.log(fruits); // [ '🍌', '🍎', '🍓' ]
 newArr = fruits.slice(-1);
-console.log(newArr);
+console.log(newArr); // [ '🍓' ]
 
 // 여러개의 배열을 붙여줌
 const arr1 = [1, 2, 3];
 const arr2 = [4, 5, 6];
-const arr3 = arr1.concat(arr2);
+const arr3 = arr1.concat(arr2); 
 console.log(arr1);
 console.log(arr2);
-console.log(arr3);
+console.log(arr3); // [ 1, 2, 3, 4, 5, 6 ]
 
 // 순서를 거꾸로
 const arr4 = arr3.reverse();
-console.log(arr4);
+console.log(arr4); // [ 6, 5, 4, 3, 2, 1 ]
 console.clear();
+
 // 중첩 배열을 하나의 배열로 쫙 펴기
+// flat -> 기본적으로 한 단계까지만 해주고 ()안에 숫자 단계만큼 풀어줌
 let arr = [
   [1, 2, 3],
   [4, [5, 6, [3, 4]]],
 ];
-console.log(arr);
+console.log(arr); // [ [ 1, 2, 3 ], [ 4, [ 5, 6, [Array] ] ] ]
 console.log(arr.flat(3));
 arr = arr.flat(3);
 
-// 특정한 값으로 배열을 채우기
+
+// 특정한 값으로 배열을 채우기  -> fill (배열 자체를 수정함)
 arr.fill(0); // 배열 자체를 수정
 console.log(arr);
 
 arr.fill('s', 1, 3);
 console.log(arr);
 
-arr.fill('a', 1);
+arr.fill('a', 1); // 시작 1부터~ 끝까지
 console.log(arr);
+
 
 // 배열을 문자열로 합하기
 let text = arr.join();
-console.log(text);
-text = arr.join(' | ');
-console.log(text);
+console.log(text);  // 0,a,a,a,a,a,a,a
+text = arr.join(' | '); 
+console.log(text);  // 0 | a | a | a | a | a | a | a
