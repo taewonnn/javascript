@@ -18,7 +18,9 @@
 // 2. 문자의 갯수 확인
 
 
-function findrep() {
-  
+function findrep(str1, str2) {
+  return 
 }
 
+
+console.log(findrep('pineapple is yummy', 'apple'))
