@@ -3,17 +3,17 @@
 
 
 function runInDelay(callback, seconds) {
-  if(!callback) {
-    throw new Error('callback함술르 전달해줘')
-  }
-  if(!seconds || seconds < 0){
-    throw new Error('seconds는 0보다 커야해')
-  }
-  setTimeout(callback, seconds * 1000);
+    if(!callback) {
+        throw new Error('callback함술르 전달해줘')
+    }
+    if(!seconds || seconds < 0){
+        throw new Error('seconds는 0보다 커야해')
+    }
+    setTimeout(callback, seconds * 1000);
 }
-try {
-  runInDelay(() => {
-    console.log('타이머 완료!');
-  }, 2);
-} catch (error) {}
+    try {
+        runInDelay(() => {
+            console.log('타이머 완료!');
+        }, 2);
+    } catch (error) {}
 
