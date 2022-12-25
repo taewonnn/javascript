@@ -59,15 +59,15 @@ function isPositive(number, resolve, reject) {
 }
 
 // 콜백을 이용한 비동기 처리
-// isPositive(
-//   10,
-//   (res) => {
-//     console.log("성공적으로 수행됨", res);
-//   },
-//   (err) => {
-//     console.log("실패함", err);
-//   }
-// );
+isPositive(
+  10,
+  (res) => {
+    console.log("성공적으로 수행됨", res);
+  },
+  (err) => {
+    console.log("실패함", err);
+  }
+);
 
 // Promise를 이용한 비동기 처리
 function isPositiveP(number) {
