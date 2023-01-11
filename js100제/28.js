@@ -27,6 +27,13 @@ function gram(string) {
 }
 
 
+function printgram(str) {
+  for(let i = 0; i<str.length, i++) {
+    console.log(str[i] + str[i+1])
+  }
+}
+
+
 // 결과값
 console.log(gram('javascript'));
 
