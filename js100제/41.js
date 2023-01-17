@@ -9,3 +9,5 @@ function distinction (i) {
       console.log('No')
   }
 }
+
+distinction(3)
