@@ -8,6 +8,5 @@ function binaryNum(num) {
   let res = '';
   while(num) {
     b.push(num%2)
-
   }
 }
